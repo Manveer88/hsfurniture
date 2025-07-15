@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HsFurnish | Modern Furniture House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.4);
+            background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-card:hover .category-overlay {
+            opacity: 1;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .navbar {
+            backdrop-filter: blur(8px);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-white/80 shadow-sm">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold text-gray-800">HsFurnish</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-amber-600 transition">Home</a>
+                <a href="products.html" class="text-gray-700 hover:text-amber-600 transition">Products</a>
+                <a href="#categories" class="text-gray-700 hover:text-amber-600 transition">Categories</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-amber-600 transition">Testimonials</a>
+                <a href="#contact" class="text-gray-700 hover:text-amber-600 transition">Contact</a>
+            </div>
+            <!-- <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-700 hover:text-amber-600"><i class="fas fa-search"></i></a>
+                <a href="#" class="text-gray-700 hover:text-amber-600"><i class="fas fa-shopping-cart"></i></a>
+                <button class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div> -->
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-white">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" alt="Modern luxury living room with contemporary sofa set, glass coffee table and abstract artwork" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="container mx-auto px-6 z-10 text-center animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Elevate Your Space</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Discover premium furniture crafted for comfort, style, and enduring quality</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">Shop Now</a>
+                <a href="#categories" class="bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-lg font-medium transition duration-300 border border-white transform hover:scale-105">Browse Collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Collections</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our carefully curated furniture collections designed for every space and style</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="category-card relative rounded-xl overflow-hidden h-64 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea4bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Modern living room set with leather sofas and wooden side tables" class="w-full h-full object-cover" />
+                    <div class="category-overlay absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <h3 class="text-white text-xl font-semibold">Living Room</h3>
+                    </div>
+                </div>
+                
+                <div class="category-card relative rounded-xl overflow-hidden h-64 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Elegant dining set with upholstered chairs and a marble-top table" class="w-full h-full object-cover" />
+                    <div class="category-overlay absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <h3 class="text-white text-xl font-semibold">Dining Room</h3>
+                    </div>
+                </div>
+                
+                <div class="category-card relative rounded-xl overflow-hidden h-64 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Cozy bedroom with a king-size upholstered bed and nightstands" class="w-full h-full object-cover" />
+                    <div class="category-overlay absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <h3 class="text-white text-xl font-semibold">Bedroom</h3>
+                    </div>
+                </div>
+                
+                <div class="category-card relative rounded-xl overflow-hidden h-64 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Home office setup with a walnut desk and ergonomic leather chair" class="w-full h-full object-cover" />
+                    <div class="category-overlay absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <h3 class="text-white text-xl font-semibold">Home Office</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Page Content -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Premium Collection</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our complete range of handcrafted furniture</p>
+            </div>
+            
+            <!-- Product Filters - Mobile Responsive -->
+            <div class="mb-12 bg-gray-50 p-4 sm:p-6 rounded-lg">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
+                        <span class="font-medium whitespace-nowrap">Categories:</span>
+                        <select class="border rounded-lg px-4 py-2">
+                            <option>All Categories</option>
+                            <option>Living Room</option>
+                            <option>Dining Room</option>
+                            <option>Bedroom</option>
+                            <option>Home Office</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="font-medium">Sort By:</span>
+                        <select class="border rounded-lg px-4 py-2">
+                            <option>Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Customer Rating</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Expanded Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Repeat your product cards here -->
+                <!-- Each card should link to its product detail page -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center">
+                <nav class="flex items-center space-x-2">
+                    <a href="#" class="px-3 py-1 rounded-md bg-gray-100 text-gray-700">&laquo;</a>
+                    <a href="#" class="px-3 py-1 rounded-md bg-amber-600 text-white">1</a>
+                    <a href="#" class="px-3 py-1 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200">2</a>
+                    <a href="#" class="px-3 py-1 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200">3</a>
+                    <a href="#" class="px-3 py-1 rounded-md bg-gray-100 text-gray-700">&raquo;</a>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Pieces</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Handcrafted furniture pieces that blend function and artistry</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                    <div class="relative">
+                        <a href="product-nova-sofa.html"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea4bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Minimalist walnut sofa with clean lines and neutral upholstery" class="w-full h-64 object-cover" /></a>
+                        <span class="absolute top-4 right-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-medium">Bestseller</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Nova Sofa</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 ml-2">(182)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Contemporary sofa with solid walnut frame and premium fabric upholstery.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-gray-800">$1,299</span>
+                            <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg transition">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Industrial-style dining table with metal legs and reclaimed wood top" class="w-full h-64 object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Era Dining Table</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 ml-2">(97)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Handcrafted dining table featuring reclaimed oak and blackened steel base.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-gray-800">$1,899</span>
+                            <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg transition">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1583845112209-5dc0a3b9e8cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern canopy bed with linen drapes and plush headboard" class="w-full h-64 object-cover" />
+                        <span class="absolute top-4 right-4 bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-medium">New</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Aurora Bed</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 ml-2">(24)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">King-size canopy bed with quilted leather headboard and linen drapery.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-gray-800">$2,499</span>
+                            <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg transition">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="products.html" class="inline-block text-amber-600 hover:text-amber-700 font-medium border-b border-amber-600 pb-1">View All Products →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Happy Clients</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">What our customers say about our products and service</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=60&q=80" alt="Portrait of Sarah Johnson, happy customer" class="w-12 h-12 rounded-full mr-4 object-cover" />
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The Nova Sofa has transformed our living room. The craftsmanship is exceptional and it's incredibly comfortable. Delivery was prompt and the setup team was professional."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/42cefec9-fc17-4d78-9307-ce4b5c5cb748.png" alt="Portrait of Michael Chen, satisfied client" class="w-12 h-12 rounded-full mr-4 object-cover" />
+                        <div>
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Our Era Dining Table is the centerpiece of our home. The reclaimed wood surface has such character, and the metal base gives it a modern industrial feel we love."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/48301b80-a109-4736-91a1-9bc794444b2b.png" alt="Portrait of Emily Rodriguez, delighted customer" class="w-12 h-12 rounded-full mr-4 object-cover" />
+                        <div>
+                            <h4 class="font-semibold">Emily Rodriguez</h4>
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The Aurora Bed exceeded all my expectations. The upholstered headboard is plush and luxurious, and the canopy adds such elegance to our bedroom oasis."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-amber-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Space?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Schedule a free design consultation with our interior stylists to find the perfect pieces for your home</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-white hover:bg-gray-100 text-amber-700 px-8 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">Book Consultation</a>
+                <a href="tel:+18005551234" class="bg-transparent hover:bg-white/20 border border-white px-8 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8">Have questions about our products or need assistance with your order? Our customer service team is ready to help.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-amber-600 mr-4 mt-1"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Our Showroom</h4>
+                                <p class="text-gray-600">123 Design District Ave,<br>San Francisco, CA 94110</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-amber-600 mr-4 mt-1"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Call Us</h4>
+                                <p class="text-gray-600">+1 (800) 555-1234<br>Mon-Sat: 9AM - 6PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-amber-600 mr-4 mt-1"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Email Us</h4>
+                                <p class="text-gray-600">hello@luxefurnish.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Send Us a Message</h3>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-medium w-full transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">LuxeFurnish</h3>
+                    <p class="text-gray-400">Crafting timeless furniture with modern functionality since 2008.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Living Room</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Dining Room</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Bedroom</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home Office</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Outdoor</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Customer Service</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Care Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Track Order</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe for exclusive offers and design inspiration.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full text-gray-800 rounded-l-lg focus:outline-none">
+                        <button type="submit" class="bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-r-lg transition">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2023 LuxeFurnish. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- Product Page Template (would be separate file) -->
+<template id="product-template">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Product Gallery -->
+            <div class="md:w-1/2">
+                <div class="mb-4">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/929dd177-c88e-4e58-8e91-16271d6db7e9.png" alt="Main product image" 
+                         class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="grid grid-cols-4 gap-2 md:gap-4">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2ac16c6c-7c20-468c-aa85-f9d7126950b3.png" alt="Product thumbnail 1" 
+                         class="cursor-pointer border border-transparent hover:border-amber-500 rounded-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9156d2a8-32e3-4cf2-9e07-315381f19f59.png" alt="Product thumbnail 2" 
+                         class="cursor-pointer border border-transparent hover:border-amber-500 rounded-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fbb54e63-cfcd-4374-a1d7-3b5b194e900f.png" alt="Product thumbnail 3" 
+                         class="cursor-pointer border border-transparent hover:border-amber-500 rounded-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/12529cde-d8b5-41a2-8f28-1f15dbd7adf0.png" alt="Product thumbnail 4" 
+                         class="cursor-pointer border border-transparent hover:border-amber-500 rounded-lg">
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="md:w-1/2">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Product Name</h1>
+                <div class="flex items-center mb-4">
+                    <div class="flex text-amber-400 mr-2">
+                        <!-- Star ratings -->
+                    </div>
+                    <span class="text-gray-600 text-sm">(42 reviews)</span>
+                </div>
+                
+                <p class="text-2xl font-bold text-gray-900 mb-4">$999.99</p>
+                <p class="text-gray-600 mb-6">Product description goes here with detailed information about materials, dimensions, and features.</p>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Options</h3>
+                    <!-- Color/Size options -->
+                </div>
+                
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="flex items-center border rounded-lg">
+                        <button class="px-3 py-1 text-lg">-</button>
+                        <span class="px-4">1</span>
+                        <button class="px-3 py-1 text-lg">+</button>
+                    </div>
+                    <button class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-medium flex-1">
+                        Add to Cart
+                    </button>
+                </div>
+                
+                <!-- Product details accordion -->
+                <div class="border-t border-gray-200 pt-6">
+                    <!-- Details sections -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Related products -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold mb-6">You may also like</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Related product cards -->
+            </div>
+        </div>
+    </div>
+</template>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            const mobileMenu = document.querySelector('.md\\:hidden + div');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Add animation class when elements come into view
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.product-card, .testimonial-card, .category-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state
+            document.querySelectorAll('.product-card, .testimonial-card, .category-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease-out';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll);
+        });
+    </script>
+
+    <!-- Product Filtering JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryFilter = document.querySelector('select:nth-of-type(1)');
+            const sortFilter = document.querySelector('select:nth-of-type(2)');
+            const productGrid = document.querySelector('.grid.grid-cols-1');
+
+            function filterProducts() {
+                const category = categoryFilter.value;
+                const sort = sortFilter.value;
+                
+                // Here you would typically make an AJAX request or filter existing products
+                console.log(`Filtering by: Category=${category}, Sort=${sort}`);
+                
+                // Simulate filtering - in a real app you would update the product grid
+            }
+
+            categoryFilter.addEventListener('change', filterProducts);
+            sortFilter.addEventListener('change', filterProducts);
+        });
+    </script>
+</body>
+</html>
